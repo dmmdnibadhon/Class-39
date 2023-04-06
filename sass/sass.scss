@@ -1,0 +1,80 @@
+/* CSS variables start */
+$heading_color: black;
+$heading_gbcolor: orange;
+$text_color: white;
+$text_gbcolor: lime;
+/* CSS variables end */
+
+
+/* Mixin start */
+@mixin heading($bg: yellow){
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    background-color: $bg;
+    font-size: 18px;
+    font-weight: 500;
+}
+@mixin para{
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    background-color: green;
+    font-size: 16px;
+    font-weight: 400;
+}
+/* Mixin end */
+
+
+/* Common CSS start */
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+/* Common CSS end*/
+
+/* Style start*/
+nav{
+    padding: 10px 0;
+    background-color: fuchsia;
+    ul{
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        li{
+            list-style: none;
+        }
+        a{
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 4px 5px;
+            &:hover{
+                color: white;
+                background-color: black;
+            }
+        }
+    }
+}
+h1{
+    color: $heading_color;
+    background: $heading_gbcolor;
+}
+p{
+    color: $text_color;
+    background: $text_gbcolor;
+    span{
+        color: red;
+    }
+}
+.mix{
+    h2{
+        @include heading($bg: red)
+    }
+    h3{
+        @include para
+    }
+}
+/* Style end*/
